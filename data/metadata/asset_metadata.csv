@@ -1,0 +1,21 @@
+Ticker,Name,Asset Class,Subclass,Region,Short Description
+SPY,SPDR S&P 500 ETF,Equity,US Large Cap,United States,Tracks the 500 largest publicly traded US companies.
+QQQ,Invesco QQQ Trust,Equity,US Technology/Growth,United States,"Tracks the Nasdaq-100, heavily weighted toward technology companies."
+IWM,iShares Russell 2000 ETF,Equity,US Small Cap,United States,Tracks smaller US companies.
+EFA,iShares MSCI EAFE ETF,Equity,Developed International,"Europe, Japan, Australia",Tracks developed markets outside North America.
+EEM,iShares MSCI Emerging Markets ETF,Equity,Emerging Markets,Global Emerging,Tracks stocks in emerging economies.
+VNQ,Vanguard Real Estate ETF,Real Estate,REITs,United States,Tracks publicly traded US real estate investment trusts.
+TLT,iShares 20+ Year Treasury Bond ETF,Fixed Income,Long Government Bonds,United States,Tracks long-term US Treasury bonds.
+IEF,iShares 7-10 Year Treasury Bond ETF,Fixed Income,Intermediate Government Bonds,United States,Tracks intermediate-term US Treasury bonds.
+LQD,iShares iBoxx Investment Grade Corporate Bond ETF,Fixed Income,Investment Grade Credit,United States,Tracks investment-grade corporate bonds.
+HYG,iShares iBoxx High Yield Corporate Bond ETF,Fixed Income,High Yield Credit,United States,Tracks higher-risk corporate bonds.
+GLD,SPDR Gold Shares,Commodity,Precious Metals,Global,Tracks the price of physical gold.
+SLV,iShares Silver Trust,Commodity,Precious Metals,Global,Tracks the price of physical silver.
+DBC,Invesco DB Commodity Index Tracking Fund,Commodity,Broad Commodities,Global,Tracks a diversified basket of commodity futures.
+DBA,Invesco DB Agriculture Fund,Commodity,Agriculture,Global,Tracks agricultural commodity futures.
+USO,United States Oil Fund,Commodity,Energy,Global,Tracks crude oil futures.
+UUP,Invesco DB US Dollar Index Bullish Fund,Currency,US Dollar,Global,Tracks the value of the US Dollar Index.
+FXE,Invesco CurrencyShares Euro Trust,Currency,Euro,Eurozone,Tracks the value of the euro relative to the US dollar.
+FXY,Invesco CurrencyShares Japanese Yen Trust,Currency,Japanese Yen,Japan,Tracks the value of the Japanese yen relative to the US dollar.
+XLK,Technology Select Sector SPDR Fund,Equity,Technology Sector,United States,Tracks companies in the US technology sector.
+XLE,Energy Select Sector SPDR Fund,Equity,Energy Sector,United States,Tracks companies in the US energy sector.

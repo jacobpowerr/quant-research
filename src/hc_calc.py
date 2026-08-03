@@ -1,25 +1,35 @@
 from hurst import compute_Hc
 import pandas as pd
 from pathlib import Path
-import matplotlib.pyplot as plt
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PROCESSED_FILES = PROJECT_ROOT / "data/processed"
 
 log_returns = pd.read_csv(
-    PROCESSED_FILES / "log_returns.csv",
-    header=[0,1],
-    index_col=0,
-    parse_dates=True
+    PROCESSED_FILES / "log_prices.csv",
+    index_col="Date",
+    parse_dates=["Date"]
 )
 
-spy = log_returns["SPY"].dropna()
+results = []
 
-H, c, data = compute_Hc(
-    spy,
-    kind="change",
-    simplified=False
-)
+for ticker in log_returns.columns:
+    ticker_returns = log_returns[ticker].dropna()
+    H, c, data = compute_Hc(
+        ticker_returns,
+        kind="price",
+        simplified=False
+    )
 
-print(f"Hurst exponent: {H:.4f}")
-print(f"Scaling constant: {c:.4f}")
+    print(f"{ticker} : H = {H:.4f}")
+
+    results.append({
+        "Ticker": ticker,
+        "Hurst" : H
+    })
+
+hurst_df = pd.DataFrame(results)
+
+hurst_df.to_csv(
+    PROCESSED_FILES / "hurst_results_log_prices.csv",
+    index=False)

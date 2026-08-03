@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-RAW_DATA_PATH = PROJECT_ROOT / "data" / "raw" / "raw_prices.csv"
+RAW_DATA_PATH = PROJECT_ROOT / "data" / "raw" / "new_prices.csv"
 
 df = pd.read_csv(RAW_DATA_PATH, 
                  header=[0, 1],
@@ -22,3 +22,6 @@ common_start = max(start_dates.values())
 df = df.loc[common_start:]
 
 df.to_csv(PROJECT_ROOT / "data" / "processed" / "cleaned_prices.csv")
+
+print(f"Shape : {df.shape}")
+print(f"Total missing values: {df.isna().sum().sum()}")
