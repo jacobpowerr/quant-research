@@ -32,4 +32,5 @@ hurst_df = pd.DataFrame(results)
 
 hurst_df.to_csv(
     PROCESSED_FILES / "hurst_results_log_prices.csv",
-    index=False)
+    index=False
+)

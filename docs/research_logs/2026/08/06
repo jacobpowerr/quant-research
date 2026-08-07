@@ -1,0 +1,134 @@
+# Research Log - 2026-08-04
+
+---
+
+# Objective
+
+What is the ONE thing I want to accomplish today?
+
+> Begin the implementation of the rolling hurst calculation.
+
+---
+
+# Why?
+
+Why does this matter for the overall project?
+
+> The rolling hurst is necassary to be able to determine wether the hurst actually provide additional information or not.
+
+---
+
+# Success Criteria
+
+By the end of today's session I should have:
+
+- An understanding of the technical steps to implement the rolling hurst
+- Started implementing the rolling hurst
+
+---
+
+# Plan
+
+What are the concrete steps?
+
+1. Try implementing the rolling hurst my self
+2. Correct and research actually procesees to do it
+
+---
+
+# Predictions (Optional)
+
+Before I begin, what do I expect to happen?
+
+> I expect that I will not be able to implement the calculation myself. 
+
+---
+
+# Deep Work Notes
+
+Use this section during the session for anything that pops into your head.
+
+### Ideas
+
+- check robustness, by computing rolling hurst for windows of 126 and 504 days
+- 
+
+### Questions
+
+-
+
+### Mistakes
+
+-
+
+### Interesting Observations
+
+-
+
+---
+
+# End of Session
+
+## What did I accomplish?
+
+> Was able to fully impolement the file for calculating the rolling hurst, saved the data.
+
+---
+
+## What did I learn?
+
+> I learned for a rolling window, you typically can use two nested loops. Basically one loop for creating the actual window, then one loop for calculating the intended measure within that window.
+
+
+---
+
+## What evidence do I have?
+
+(Data, plots, outputs, observations.)
+
+> Produced a csv file full of rolling hurst values.
+
+---
+
+## What surprised me?
+
+> What suprsied me is the generall simplicity within the calculation for this step in the project. As well as the ease in which you can pivot a df/csv file.
+
+---
+
+## Problems / Blockers
+
+> The probvelm for me was just simply learning how to coompute things within a window.
+
+---
+
+## Next Question
+
+> How will the statistical measures of the rolling hurst compare to the total hurst?
+
+---
+
+## Tomorrow's First Task
+
+> Impolement the basica statistical measures, ie mean, standard deviation etc.
+
+---
+
+## Files Changed
+
+- edited rolling_hurst_calculation.py
+- created rolling_hurst_statistics.py
+
+---
+
+## Git Commit
+
+```bash
+git add .
+git commit -m ""
+git push
+```
+
+Commit Message:
+
+> completed rolling hurst calculation, stored values in csv, initiated rolling hurst calculation file
