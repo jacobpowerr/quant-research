@@ -9,6 +9,7 @@ DATA_PATH = PROJECT_ROOT / "data" / "processed"
 
 WINDOW_SIZE = 252
 
+
 log_returns = pd.read_csv(
     DATA_PATH / "log_returns.csv",
     index_col="Date",
@@ -48,6 +49,8 @@ rolling_hurst_wide = rolling_hurst_df.pivot(
     columns="Ticker",
     values="Hurst"
 )
+
+rolling_hurst_wide = rolling_hurst_wide.reset_index()
 
 rolling_hurst_wide.to_csv(
     DATA_PATH / "rolling_hurst.csv",
