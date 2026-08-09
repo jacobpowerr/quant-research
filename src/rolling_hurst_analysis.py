@@ -12,4 +12,6 @@ rolling_hurst = pd.read_csv(
 
 hurst_summary = rolling_hurst.set_index("Date").describe().T
 
-print(hurst_summary)
+hurst_summary = hurst_summary[["mean", "min", "max", "std"]]
+
+hurst_summary.to_csv(DATA_PATH / "etf_rolling_hurst_metrics.csv")

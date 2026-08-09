@@ -52,10 +52,12 @@ for sim in range(N_SIMULATIONS):
     null_mins.append(rolling_hurst.min())
     null_maxs.append(rolling_hurst.max())
 
-print("Null mean H:", np.mean(null_means))
-print("Null mean std:", np.std(null_means))
+results = pd.DataFrame({
+    "simulation": range(1, N_SIMULATIONS + 1),
+    "mean": null_means,
+    "min": null_mins,
+    "max": null_maxs,
+    "std": null_stds
+})
 
-print(
-    "95 percent interval for mean H:",
-    np.quantile(null_means, [0.025, 0.975])
-)
+results.to_csv("iid_rolling_hurst.csv", index=False)
