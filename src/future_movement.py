@@ -8,20 +8,19 @@ DATA_PATH = PARENT_ROOT / "data/processed"
 log_prices = pd.read_csv(
     DATA_PATH / "log_prices.csv",
     index_col="Date",
-    parse_dates="Date"
+    parse_dates=["Date"]
 )
 
 regime_features = pd.read_csv(
     DATA_PATH / "regime_features.csv",
-    index_col="Date",
-    parse_dates="Date"
+    parse_dates=["Date"]
 )
 
 HORIZON = 21
 
 log_prices = log_prices.sort_index()
 
-future_log_prices = log_prices(-HORIZON)
+future_log_prices = log_prices.shift(-HORIZON)
 
 future_movement = future_log_prices - log_prices
 
@@ -40,5 +39,28 @@ future_direction_long = (
 data = regime_features.merge(
     future_direction_long,
     on=["Date", "Ticker"],
-    how="innner"
+    how="inner"
+)
+
+data["Current_Direction"] = np.sign(data["Momentum"])
+
+data = data.dropna(subset=["Future_Direction"]).copy()
+
+data = data[
+    (data["Current_Direction"] != 0) &
+    (data["Future_Direction"] != 0)
+].copy()
+
+data["Trend_Continuation"] = (
+    data["Current_Direction"] == data["Future_Direction"]
+).astype(int)
+
+print(data["Trend_Continuation"].value_counts())
+print(data["Trend_Continuation"].value_counts(normalize=True))
+
+data = data.sort_values(["Ticker", "Date"])
+
+data.to_csv(
+    DATA_PATH / "model_data.csv",
+    index=False
 )
