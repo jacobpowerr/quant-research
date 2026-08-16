@@ -1,0 +1,3 @@
+# Rolling Hurst Conclusion
+
+Rolling Hurst estimates display apparent persistence across several ETFs. However, similar levels of persistence also emerge in IID simulations, suggesting that much of the observed behaviour may be attributable to sampling variability in the Hurst estimator rather than genuine long-memory structure. Therefore, rolling Hurst estimates alone provide limited evidence of persistent market structure and are better treated as one potential feature within a broader regime-detection framework.
